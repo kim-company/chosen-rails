@@ -290,9 +290,9 @@ class Chosen extends AbstractChosen
 
   choice_build: (item) ->
     console.log "TEST"
-    console.log @choise_builder
+    console.log @choice_builder
     console.log "=========="
-    return @choice_builder(item) if @choise_builder
+    return @choice_builder.bind(this, item) if @choice_builder
 
     choice = $('<li />', { class: "search-choice" }).html("<span>#{item.html}</span>")
 
