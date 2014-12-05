@@ -289,10 +289,9 @@ class Chosen extends AbstractChosen
     this.result_clear_highlight() if $(evt.target).hasClass "active-result" or $(evt.target).parents('.active-result').first()
 
   choice_build: (item) ->
-    console.log "TEST"
-    console.log @choice_builder
-    console.log "=========="
-    return @choice_builder.bind(this, item) if @choice_builder
+    if @choice_builder
+      @choice_builder.bind(this, item)()
+      return
 
     choice = $('<li />', { class: "search-choice" }).html("<span>#{item.html}</span>")
 
@@ -303,7 +302,7 @@ class Chosen extends AbstractChosen
       close_link.bind 'click.chosen', (evt) => this.choice_destroy_link_click(evt)
       choice.append close_link
 
-    @search_container.before  choice
+    @search_container.before choice
 
   choice_destroy_link_click: (evt) ->
     evt.preventDefault()
