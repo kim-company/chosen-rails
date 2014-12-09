@@ -255,10 +255,6 @@ $chosen-sprite-retina: image-url('chosen-sprite@2x.png') !default;
         background: $chosen-sprite -42px 1px no-repeat;
         &:hover { background-position: -42px -10px }
       }
-      .search-choice-settings {
-        background: $chosen-sprite -42px 1px no-repeat;
-        &:hover { background-position: -42px -10px }
-      }
     }
     &.search-choice-disabled {
       padding-right: 5px;
