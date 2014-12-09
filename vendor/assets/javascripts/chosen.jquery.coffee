@@ -126,7 +126,7 @@ class Chosen extends AbstractChosen
       if evt and evt.type is "mousedown" and not @results_showing
         evt.preventDefault()
 
-      if not (evt? and ($ evt.target).hasClass "search-choice-close")
+      if not (evt? and ($ evt.target).hasClass "search-choice-button")
         if not @active_field
           @search_field.val "" if @is_multiple
           $(@container[0].ownerDocument).bind 'click.chosen', @click_test_action
