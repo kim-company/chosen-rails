@@ -225,7 +225,7 @@ $chosen-sprite-retina: image-url('chosen-sprite@2x.png') !default;
     &.search-choice {
       position: relative;
       margin: 3px 5px 3px 0;
-      padding: 3px 20px 3px 5px;
+      padding: 3px 5px;
       border: 1px solid #aaa;
       max-width: 100%;
       border-radius: 3px;
@@ -241,18 +241,23 @@ $chosen-sprite-retina: image-url('chosen-sprite@2x.png') !default;
       span {
         word-wrap: break-word;
       }
-      .search-choice-close {
-        position: absolute;
-        top: 4px;
-        right: 3px;
+      .search-choice-button {
+        position: relative;
+        float: right;
         display: block;
         width: 12px;
         height: 12px;
-        background: $chosen-sprite -42px 1px no-repeat;
+        margin-top: 5px;
+        margin-left: 5px;
         font-size: 1px;
-        &:hover {
-          background-position: -42px -10px;
-        }
+      }
+      .search-choice-close {
+        background: $chosen-sprite -42px 1px no-repeat;
+        &:hover { background-position: -42px -10px }
+      }
+      .search-choice-settings {
+        background: $chosen-sprite -42px 1px no-repeat;
+        &:hover { background-position: -42px -10px }
       }
     }
     &.search-choice-disabled {
