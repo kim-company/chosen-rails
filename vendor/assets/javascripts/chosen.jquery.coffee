@@ -289,10 +289,6 @@ class Chosen extends AbstractChosen
     this.result_clear_highlight() if $(evt.target).hasClass "active-result" or $(evt.target).parents('.active-result').first()
 
   choice_build: (item) ->
-    if @choice_builder
-      @choice_builder.bind(this, item)()
-      return
-
     choice = $('<li />', { class: "search-choice" }).html("<span>#{item.html}</span>")
 
     if item.disabled
@@ -301,6 +297,8 @@ class Chosen extends AbstractChosen
       close_link = $('<a />', { class: 'search-choice-close', 'data-option-array-index': item.array_index })
       close_link.bind 'click.chosen', (evt) => this.choice_destroy_link_click(evt)
       choice.append close_link
+
+      @choice_builder.bind(this, item, choice)() if @choice_builder
 
     @search_container.before choice
 
