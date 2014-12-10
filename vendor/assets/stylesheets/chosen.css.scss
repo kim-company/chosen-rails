@@ -240,6 +240,7 @@ $chosen-sprite-retina: image-url('chosen-sprite@2x.png') !default;
       cursor: default;
       span {
         word-wrap: break-word;
+        float: left;
       }
       .search-choice-button {
         position: relative;
